@@ -1,0 +1,33 @@
+/*
+Theme Name: SuomiJobs USA Theme
+Author: HSG IT
+Description: SuomiJobs recruitment platform theme
+Version: 1.0
+*/
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f7f9fc;
+}
+
+header{
+background:#0a2540;
+color:white;
+padding:20px;
+}
+
+.hero{
+padding:80px;
+text-align:center;
+background:#1e3a8a;
+color:white;
+}
+
+.btn{
+background:#2563eb;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+}
