@@ -1,33 +1,353 @@
 /*
-Theme Name: SuomiJobs USA Theme
+Theme Name: SuomiJobs USA Revenue Theme
+Theme URI: https://suomijobs.com
 Author: HSG IT
-Description: SuomiJobs recruitment platform theme
+Author URI: https://hsgit.fi
+Description: USA-first WordPress theme for SuomiJobs focused on employer leads, candidate database growth, and staffing revenue.
 Version: 1.0
+Text Domain: suomijobs-usa
 */
 
-body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f7f9fc;
+:root{
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#132238;
+  --muted:#5b6b80;
+  --primary:#0f62fe;
+  --primary-dark:#0a4fd1;
+  --nav:#0d1b2a;
+  --line:#dfe7f1;
+  --success:#0f9d58;
+  --shadow:0 10px 30px rgba(17,34,68,.08);
+  --radius:18px;
+  --max:1180px;
 }
 
-header{
-background:#0a2540;
-color:white;
-padding:20px;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
+
+a{color:var(--primary); text-decoration:none}
+a:hover{color:var(--primary-dark)}
+img{max-width:100%; height:auto}
+
+.container{
+  width:min(var(--max), 92%);
+  margin:0 auto;
+}
+
+.site-header{
+  background:var(--nav);
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.site-header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:16px 0;
+}
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo-mark{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#2d7ff9,#0a4fd1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:700;
+  font-size:18px;
+  box-shadow:var(--shadow);
+}
+.logo-text{
+  color:#fff;
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+.nav-links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.nav-links a{
+  color:#dfe9f7;
+  font-weight:600;
+}
+.nav-links a:hover{color:#fff}
 
 .hero{
-padding:80px;
-text-align:center;
-background:#1e3a8a;
-color:white;
+  background:
+    radial-gradient(circle at top right, rgba(15,98,254,.15), transparent 35%),
+    linear-gradient(180deg,#0d1b2a 0%, #13294b 100%);
+  color:#fff;
+  padding:88px 0 70px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:36px;
+  align-items:center;
+}
+.hero h1{
+  font-size:52px;
+  line-height:1.08;
+  margin:0 0 16px;
+}
+.hero p{
+  font-size:19px;
+  color:#d8e4f5;
+  max-width:720px;
+  margin:0 0 26px;
+}
+.btn-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:12px;
+  font-weight:700;
+  transition:.2s ease;
+}
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+}
+.btn-primary:hover{
+  background:var(--primary-dark);
+  color:#fff;
+  transform:translateY(-1px);
+}
+.btn-secondary{
+  border:1px solid rgba(255,255,255,.25);
+  color:#fff;
+  background:rgba(255,255,255,.06);
+}
+.btn-secondary:hover{
+  background:rgba(255,255,255,.12);
+  color:#fff;
 }
 
-.btn{
-background:#2563eb;
-color:white;
-padding:12px 20px;
-border-radius:6px;
-text-decoration:none;
+.hero-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+  padding:24px;
+  backdrop-filter:blur(10px);
+}
+.hero-stat{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.stat-box{
+  background:rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:18px;
+}
+.stat-box strong{
+  display:block;
+  font-size:28px;
+  color:#fff;
+}
+.stat-box span{
+  color:#d8e4f5;
+  font-size:14px;
+}
+
+.section{
+  padding:72px 0;
+}
+.section-title{
+  text-align:center;
+  margin:0 0 10px;
+  font-size:38px;
+}
+.section-subtitle{
+  text-align:center;
+  max-width:800px;
+  margin:0 auto 32px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:26px;
+  box-shadow:var(--shadow);
+}
+.card h3{
+  margin:10px 0 10px;
+  font-size:22px;
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+}
+.icon{
+  width:42px;
+  height:42px;
+}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+  margin-top:20px;
+}
+.badge{
+  background:#eef4ff;
+  color:#1346a8;
+  border:1px solid #d8e7ff;
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:700;
+  font-size:14px;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:28px;
+  align-items:center;
+}
+.checklist{
+  padding:0;
+  margin:18px 0 0;
+  list-style:none;
+}
+.checklist li{
+  margin:0 0 10px;
+  padding-left:28px;
+  position:relative;
+}
+.checklist li:before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--success);
+  font-weight:700;
+}
+
+.cta{
+  background:linear-gradient(135deg,#0f62fe,#0a4fd1);
+  color:#fff;
+  border-radius:28px;
+  padding:38px;
+  box-shadow:var(--shadow);
+}
+.cta h2{
+  margin:0 0 10px;
+  font-size:34px;
+}
+.cta p{
+  margin:0 0 20px;
+  color:#e8f0ff;
+}
+
+.site-footer{
+  background:#0d1b2a;
+  color:#d9e6f7;
+  padding:36px 0;
+  margin-top:40px;
+}
+.site-footer p{
+  margin:6px 0;
+}
+.site-footer a{
+  color:#fff;
+}
+
+.page-hero{
+  background:linear-gradient(180deg,#13294b 0%, #17355f 100%);
+  color:#fff;
+  padding:62px 0;
+}
+.page-hero h1{
+  margin:0 0 10px;
+  font-size:42px;
+}
+.page-hero p{
+  margin:0;
+  color:#d8e4f5;
+  max-width:800px;
+  font-size:18px;
+}
+
+.simple-list{
+  margin:18px 0 0;
+  padding-left:20px;
+}
+.simple-list li{
+  margin-bottom:10px;
+}
+
+.content-card{
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  border-radius:24px;
+  padding:34px;
+}
+
+.notice{
+  background:#fff8e6;
+  color:#6b5600;
+  border:1px solid #f1df9c;
+  padding:14px 16px;
+  border-radius:14px;
+  margin-top:22px;
+}
+
+@media (max-width: 960px){
+  .hero-grid,
+  .grid-3,
+  .grid-2,
+  .split{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{font-size:40px}
+  .section-title{font-size:32px}
+  .page-hero h1{font-size:34px}
+}
+
+@media (max-width: 640px){
+  .nav-links{gap:12px}
+  .hero{padding:70px 0 56px}
+  .hero h1{font-size:34px}
+  .hero p{font-size:17px}
+  .btn{width:100%; text-align:center}
 }

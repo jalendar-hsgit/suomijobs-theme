@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
 <head>
-<meta charset="UTF-8">
-<title><?php bloginfo('name'); ?></title>
-<?php wp_head(); ?>
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php wp_head(); ?>
 </head>
+<body <?php body_class(); ?>>
 
-<body>
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a class="logo-wrap" href="<?php echo esc_url(home_url('/')); ?>">
+      <div class="logo-mark">SJ</div>
+      <div class="logo-text">SuomiJobs</div>
+    </a>
 
-<header>
-<h1>SuomiJobs</h1>
-<nav>
-<a href="/">Home</a>
-<a href="/employers">Employers</a>
-<a href="/candidates">Candidates</a>
-<a href="/services">Services</a>
-<a href="/contact">Contact</a>
-</nav>
+    <?php suomijobs_primary_menu(); ?>
+  </div>
 </header>
